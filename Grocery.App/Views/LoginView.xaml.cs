@@ -4,9 +4,15 @@ namespace Grocery.App.Views;
 
 public partial class LoginView : ContentPage
 {
-	public LoginView(LoginViewModel viewModel)
-	{
-		InitializeComponent();
-		BindingContext = viewModel;
-	}
+    public LoginView(LoginViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
+
+    private async void OnRegisterClicked(object sender, EventArgs e)
+    {
+        // IMPORTANT: use Navigation.PushAsync because MainPage is a NavigationPage
+        await Navigation.PushAsync(new RegisterView());
+    }
 }
